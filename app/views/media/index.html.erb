@@ -1,1 +1,9 @@
-<h1>It's me, Maria!</h1>
+<h1>Metrak</h1>
+
+<ul>
+    <% @media.each do |medium| %>
+        <li>
+            <%= medium.title %>
+        </li>
+    <% end %>
+</ul>
