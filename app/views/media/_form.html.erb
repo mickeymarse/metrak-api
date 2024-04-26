@@ -1,0 +1,19 @@
+<%= form_with model: medium do |form| %>
+  <section>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% medium.errors.full_messages_for(:title).each do |message| %>
+    <% end %>
+  </section>
+
+  <section>
+    <%= form.label :review %><br>
+    <%= form.text_area :review %>
+    <% medium.errors.full_messages_for(:review).each do |message| %>
+    <% end %>
+  </section>
+
+  <section>
+    <%= form.submit %>
+  </section>
+<% end %>

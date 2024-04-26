@@ -2,3 +2,10 @@
 
 <p><%= @medium.review %></p>
 
+<ul>
+  <li><%= link_to "Edit", edit_medium_path(@medium) %></li>
+   <li><%= link_to "Destroy", medium_path(@medium), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "What lead to this decision? Sure you won't regre it?"
+                  } %></li>
+</ul>

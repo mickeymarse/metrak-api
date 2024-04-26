@@ -3,8 +3,9 @@
 <ul>
     <% @media.each do |medium| %>
         <li>
-            <a href='/media/<%= medium.id %>'>
-            <%= medium.title %>
+            <%= link_to medium.title, medium %>
         </li>
     <% end %>
 </ul>
+
+<%= link_to "Add More Media!", new_medium_path %>
