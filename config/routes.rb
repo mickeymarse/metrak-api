@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "media#index"
   get "/media", to: "media#index"
+  get "/media/:id", to: "media#show"
 end

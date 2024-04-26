@@ -3,6 +3,7 @@
 <ul>
     <% @media.each do |medium| %>
         <li>
+            <a href='/media/<%= medium.id %>'>
             <%= medium.title %>
         </li>
     <% end %>
