@@ -1,8 +1,15 @@
- <% unless thought.archived? %>
+<% unless thought.archived? %>
   <article>
       <strong>Posted on:</strong>
       <%= thought.created_at.to_date %>
       <strong>Thought:</strong>
       <%= thought.body %>
     </article>
+
+    <section>
+      <%= link_to "Forget this thought", [thought.medium, thought], data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "You really want to wipe it from your memory?"
+                  } %>
+    </section>
 <% end %>
