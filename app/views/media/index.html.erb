@@ -1,10 +1,14 @@
 <h1>Metrak</h1>
 
+I'm tracking <%= Medium.public_count %> media and counting!
+
 <ul>
     <% @media.each do |medium| %>
-        <li>
-            <%= link_to medium.title, medium %>
-        </li>
+        <% unless medium.archived? %>
+            <li>
+                <%= link_to medium.title, medium %>
+            </li>
+        <% end %>
     <% end %>
 </ul>
 

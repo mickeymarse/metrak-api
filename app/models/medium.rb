@@ -1,4 +1,6 @@
 class Medium < ApplicationRecord
+    include Visible
+    
     has_many :thoughts
     
     validates :title, presence: true

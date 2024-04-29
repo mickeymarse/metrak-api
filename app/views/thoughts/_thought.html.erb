@@ -1,6 +1,8 @@
- <article>
-    <strong>Posted on:</strong>
-    <%= thought.created_at.to_date %>
-    <strong>Thought:</strong>
-    <%= thought.body %>
-  </article>
+ <% unless thought.archived? %>
+  <article>
+      <strong>Posted on:</strong>
+      <%= thought.created_at.to_date %>
+      <strong>Thought:</strong>
+      <%= thought.body %>
+    </article>
+<% end %>

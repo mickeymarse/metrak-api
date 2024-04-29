@@ -14,6 +14,12 @@
   </section>
 
   <section>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected: medium.status || 'public' %>
+  </section>
+
+
+  <section>
     <%= form.submit %>
   </section>
 <% end %>

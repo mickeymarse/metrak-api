@@ -7,6 +7,6 @@ class ThoughtsController < ApplicationController
 
   private
     def thought_params
-      params.require(:thought).permit(:body)
+      params.require(:thought).permit(:body, :status)
     end
 end
