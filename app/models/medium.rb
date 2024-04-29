@@ -1,4 +1,5 @@
 class Medium < ApplicationRecord
+    include Typology, Likeness
     
     has_many :thoughts, dependent: :destroy
     

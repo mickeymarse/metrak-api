@@ -12,17 +12,17 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_04_29_151253) do
   create_table "media", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "type"
+    t.string "type", null: false
     t.integer "year"
-    t.string "appreciation"
-    t.string "image"
+    t.string "appreciation", null: false
+    t.string "image", null: false
   end
 
   create_table "thoughts", force: :cascade do |t|
-    t.text "body"
+    t.text "body", null: false
     t.integer "medium_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
