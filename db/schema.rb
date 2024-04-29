@@ -10,21 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_29_102644) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_29_140255) do
   create_table "media", force: :cascade do |t|
     t.string "title"
-    t.text "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status", default: "public"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.text "body"
-    t.integer "medium_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["medium_id"], name: "index_reviews_on_medium_id"
+    t.string "type"
+    t.integer "year"
+    t.string "appreciation"
   end
 
   create_table "thoughts", force: :cascade do |t|
@@ -32,10 +25,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_29_102644) do
     t.integer "medium_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "status", default: "public"
     t.index ["medium_id"], name: "index_thoughts_on_medium_id"
   end
 
-  add_foreign_key "reviews", "media"
   add_foreign_key "thoughts", "media"
 end

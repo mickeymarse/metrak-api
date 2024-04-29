@@ -1,4 +1,3 @@
-<% unless thought.archived? %>
   <article>
       <strong>Posted on:</strong>
       <%= thought.created_at.to_date %>
@@ -12,4 +11,3 @@
                     turbo_confirm: "You really want to wipe it from your memory?"
                   } %>
     </section>
-<% end %>
