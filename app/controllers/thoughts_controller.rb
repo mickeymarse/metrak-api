@@ -1,4 +1,6 @@
 class ThoughtsController < ApplicationController
+  # http_basic_authenticate_with name: "mickey", password: "1234", only: :destroy
+
   def create
     @medium = Medium.find(params[:medium_id])
     @thought = @medium.thoughts.create(thought_params)

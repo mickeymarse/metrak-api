@@ -1,4 +1,6 @@
 class MediaController < ApplicationController
+  # http_basic_authenticate_with name: "mickey", password: "1234", except: [:index, :show]
+
   def index
     @media = Medium.all
   end
