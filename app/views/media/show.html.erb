@@ -11,22 +11,7 @@
 </ul>
 
 <h2>Thoughts</h2>
-<% @medium.thoughts.each do |thought| %>
-  <article>
-    <strong>Posted on:</strong>
-    <%= thought.created_at.to_date %>
-    <strong>Thought:</strong>
-    <%= thought.body %>
-  </article>
-<% end %>
+<%= render @medium.thoughts %>
 
 <h2>Add your thoughts:</h2>
-<%= form_with model: [ @medium, @medium.thoughts.build ] do |form| %>
-  <span>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </span>
-  <section>
-    <%= form.submit %>
-  </section>
-<% end %>
+<%= render 'thoughts/form' %>
