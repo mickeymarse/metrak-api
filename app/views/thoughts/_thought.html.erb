@@ -1,9 +1,12 @@
-  <article>
-      <strong>Posted on:</strong>
-      <%= thought.created_at.to_date %>
-      <strong>Thought:</strong>
+  <p>
+      <%
+=begin%>
+ <strong>Posted on:</strong>
+      <%= thought.created_at.to_date %> 
+<%
+=end%>
       <%= thought.body %>
-    </article>
+    </p>
 
     <section>
       <%= link_to "Forget this thought", [thought.medium, thought], data: {
