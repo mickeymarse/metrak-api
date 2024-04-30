@@ -1,21 +1,18 @@
 
-<main class="flex flex-col">
+<section class="flex flex-col">
 
 <h1 class="big-hd">Metrak<p class="sub-hd px-0">Mickey's personal media tracker.</p></h1>
 
 <h3 class="text-3xl font-bold dark:text-white">I'm tracking <%= Medium.count %> media and counting!</h3>
 
-<button type="button" class="alt-btn text-xl place-self-stretch"><%= link_to "Add More Media!", new_medium_path %></button>
+<button type="button" class="alt-btn text-xl place-self-start"><%= link_to "Add More Media!", new_medium_path %></button>
 
 <div class="gallery">
- <ul>
     <% @media.each do |medium| %>
-            <li>
-                <%= link_to medium.title, medium %>
-            </li>
-    <% end %>
-</ul>   
+            <img src="<%= medium.image %>" alt="<%= medium.altext %>" class="gallery-img" />
+            <%= link_to medium.title, medium %>  
+    <% end %>   
 </div>
 
 
-</main>
+</section>

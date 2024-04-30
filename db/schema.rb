@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_29_151253) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_30_145749) do
   create_table "media", force: :cascade do |t|
-    t.string "title", null: false
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "type", null: false
     t.integer "year"
-    t.string "appreciation", null: false
-    t.string "image", null: false
+    t.string "appreciation"
+    t.string "image"
+    t.string "format"
+    t.text "altext"
   end
 
   create_table "thoughts", force: :cascade do |t|
-    t.text "body", null: false
+    t.text "body"
     t.integer "medium_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

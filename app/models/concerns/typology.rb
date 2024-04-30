@@ -1,70 +1,70 @@
 module Typology
     extend ActiveSupport::Concern
 
-    VALID_TYPES = ['movie', 'show', 'comic', 'book', 'game', 'zine']
+    VALID_FORMATS = ['movie', 'show', 'comic', 'book', 'game', 'zine']
 
     included do
-        validates :type, inclusion: { in: VALID_TYPES }
+        validates :format, inclusion: { in: VALID_FORMATS }
     end
 
     class_methods do
         def movie_count
-            where(type: 'movie').count
+            where(format: 'movie').count
         end
     end
 
     class_methods do
         def show_count
-            where(type: 'show').count
+            where(format: 'show').count
         end
     end
 
     class_methods do
         def comic_count
-            where(type: 'comic').count
+            where(format: 'comic').count
         end
     end
 
     class_methods do
         def book_count
-            where(type: 'book').count
+            where(format: 'book').count
         end
     end
 
     class_methods do
         def game_count
-            where(type: 'game').count
+            where(format: 'game').count
         end
     end
 
     class_methods do
         def zine_count
-            where(type: 'zine').count
+            where(format: 'zine').count
         end
     end
 
 
     def movie?
-        type == 'movie'
+        format == 'movie'
     end
 
     def show?
-        type == 'show'
+        format == 'show'
     end
 
     def comic?
-        type == 'comic'
+        format == 'comic'
     end
 
     def book?
-        type == 'book'
+        format == 'book'
     end
 
     def game?
-        type == 'game'
+        format == 'game'
     end
 
     def zine?
-        type == 'zine'
+        format == 'zine'
     end
 end

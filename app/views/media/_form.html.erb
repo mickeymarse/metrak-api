@@ -21,8 +21,15 @@
   </section>
 
   <section>
-    <%= form.label :type %><br>
-    <%= form.select :type, Typology::VALID_TYPES, selected: 'zine' %>
+    <%= form.label :altext %><br>
+    <%= form.text_area :altext %>
+    <% medium.errors.full_messages_for(:altext).each do |message| %>
+    <% end %>
+  </section>
+
+  <section>
+    <%= form.label :format %><br>
+    <%= form.select :format, Typology::VALID_FORMATS, selected: 'zine' %>
   </section>
 
   <section>
@@ -30,7 +37,7 @@
     <%= form.select :appreciation, Likeness::VALID_APPRECIATIONS, selected: 'indifferent' %>
   </section>
 
-  <section>
+  <button type="button" class="alt-btn">
     <%= form.submit %>
-  </section>
+  </button>
 <% end %>
