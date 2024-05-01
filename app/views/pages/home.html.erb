@@ -9,8 +9,8 @@
 
 <article class="gallery">
     <% @media.each do |medium| %>
-        <img data-modal-target="default-modal" data-modal-toggle="default-modal" src="<%= medium.image %>" alt="<%= medium.altext %>" class="gallery-img" />
-        <section id="default-modal" tabindex="-1" aria-hidden="true" class="mother-modal">
+        <img data-modal-target="modal-<%= medium.id %>" data-modal-toggle="modal-<%= medium.id %>" src="<%= medium.image %>" alt="<%= medium.altext %>" class="gallery-img" />
+        <section id="modal-<%= medium.id %>" tabindex="-1" aria-hidden="true" class="mother-modal">
             <div class="relative p-4 w-full max-w-2xl max-h-full">
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                     <article class="flex items-center p-4 md:p-5 rounded-t dark:border-gray-600">
