@@ -16,7 +16,16 @@
     @apply grid grid-cols-2 md:grid-cols-3 gap-4;
   }
   .gallery-img {
-    @apply h-auto max-w-56 rounded-lg;
+    @apply h-auto max-w-56 rounded-lg hover:cursor-pointer;
+  }
+  .mother-modal {
+    @apply hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full;
+  }
+  .medium-badge {
+    @apply bg-gray-100 text-gray-800 text-lg font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300;
+  }
+  .thought-badge {
+    @apply bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300;
   }
 }
 
