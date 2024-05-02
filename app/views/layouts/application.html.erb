@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Metrak</title>
+    <meta name="description" content="Mickey's media tracker built with Ruby on Rails.">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,10 +10,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <script><%= javascript_include_tag('checkIfDarkMode.js') %></script>
+
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto my-10 px-5">
       <%= yield %>
     </main>
   </body>
