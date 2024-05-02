@@ -1,7 +1,7 @@
 module Typology
     extend ActiveSupport::Concern
 
-    VALID_FORMATS = ['movie', 'show', 'comic', 'book', 'game', 'zine']
+    VALID_FORMATS = ['movie', 'show', 'comic', 'book', 'game', 'zine', 'podcast']
 
     included do
         validates :format, inclusion: { in: VALID_FORMATS }
@@ -43,6 +43,12 @@ module Typology
         end
     end
 
+    class_methods do
+        def podcast_count
+            where(format: 'podcast').count
+        end
+    end
+
 
     def movie?
         format == 'movie'
@@ -66,5 +72,9 @@ module Typology
 
     def zine?
         format == 'zine'
+    end
+
+    def podcast?
+        format == 'podcast'
     end
 end
