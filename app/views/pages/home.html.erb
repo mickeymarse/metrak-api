@@ -1,14 +1,19 @@
 
 <section class="flex flex-col">
 
-<section class="grid grid-cols-2">
+<nav class="flex">
 <article><h1 class="big-hd">Metrak<p class="sub-hd px-0">Mickey's personal media tracker.</p></h1></article>
-<span class="place-self-end"><%= render  "darkModeButton"%></span>
-</section>
+<button type="button"><%= render  "darkModeButton"%></button>
+</nav>
+
+<% if gay_signed_in? %>
+    <%= render  "gayPowers"%>
+<% else %>
+    <button type="button" class="alt-btn text-xl flex place-self-start"><%= link_to 'Sign in', new_gay_session_path %></button>
+<% end %>
 
 <h3 class="text-3xl font-bold dark:text-white">I'm tracking <%= Medium.count %> media and counting!</h3>
 
-<button type="button" class="alt-btn text-xl place-self-start"><%= link_to "Add More Media!", new_medium_path %></button>
 
 <article class="gallery">
     <% @media.each do |medium| %>
