@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .alt-btn {
+    @apply py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700;
+  }
+  .big-hd {
+    @apply mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white;
+  }
+  .sub-hd {
+    @apply mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400;
+  }
+  .gallery {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+  }
+  .gallery-img {
+    @apply h-auto max-w-full border-2 border-solid rounded-lg hover:cursor-pointer;
+  }
+  .mother-modal {
+    @apply hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full;
+  }
+  .medium-badge {
+    @apply bg-gray-100 text-gray-800 text-lg font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300;
+  }
+  .thought-badge {
+    @apply bg-blue-100 text-blue-800 text-sm font-medium w-fit me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300;
+  }
+}
+
+/* .gallery {
+    @apply flex flex-row flex-wrap gap-4;
+  } 
+    .gallery-img {
+    @apply h-auto max-w-56 rounded-lg hover:cursor-pointer;
+  }
+  */

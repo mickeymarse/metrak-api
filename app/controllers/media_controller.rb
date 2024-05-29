@@ -46,6 +46,6 @@ class MediaController < ApplicationController
 
   private
   def medium_params
-    params.require(:medium).permit(:title, :review)
+    params.require(:medium).permit(:title, :format, :appreciation, :image, :year, :altext, :end_year)
   end
 end

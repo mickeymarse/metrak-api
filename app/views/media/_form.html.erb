@@ -7,19 +7,44 @@
   </section>
 
   <section>
-    <%= form.label :review %><br>
-    <%= form.text_area :review %>
-    <% medium.errors.full_messages_for(:review).each do |message| %>
+    <%= form.label :year %><br>
+    <%= form.text_field :year %>
+    <% medium.errors.full_messages_for(:year).each do |message| %>
     <% end %>
   </section>
 
   <section>
-    <%= form.label :status %><br>
-    <%= form.select :status, Visible::VALID_STATUSES, selected: medium.status || 'public' %>
+    <%= form.label :end_year %><br>
+    <%= form.text_field :end_year %>
+    <% medium.errors.full_messages_for(:end_year).each do |message| %>
+    <% end %>
   </section>
-
 
   <section>
-    <%= form.submit %>
+    <%= form.label :image %><br>
+    <%= form.text_field :image %>
+    <% medium.errors.full_messages_for(:image).each do |message| %>
+    <% end %>
   </section>
+
+  <section>
+    <%= form.label :altext %><br>
+    <%= form.text_area :altext %>
+    <% medium.errors.full_messages_for(:altext).each do |message| %>
+    <% end %>
+  </section>
+
+  <section>
+    <%= form.label :format %><br>
+    <%= form.select :format, Typology::VALID_FORMATS, selected: medium.format || 'zine' %>
+  </section>
+
+  <section>
+    <%= form.label :appreciation %><br>
+    <%= form.select :appreciation, Likeness::VALID_APPRECIATIONS, selected: medium.appreciation || 'indifferent' %>
+  </section>
+
+  <button type="button" class="alt-btn">
+    <%= form.submit %>
+  </button>
 <% end %>

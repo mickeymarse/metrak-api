@@ -4,12 +4,6 @@
     <%= form.text_area :body %>
   </span>
 
-  <p>
-    <%= form.label :status %><br>
-    <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
-  </p>
-
-
   <section>
     <%= form.submit %>
   </section>
