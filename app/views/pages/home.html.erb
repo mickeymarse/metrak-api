@@ -12,8 +12,10 @@
 
 <article class="gallery">
     <% @media.each do |medium| %>
-
+        
+        <div>
         <img data-modal-target="modal-<%= medium.id %>" data-modal-toggle="modal-<%= medium.id %>" src="<%= medium.image %>" alt="<%= medium.altext %>" class="gallery-img" />
+        </div>
             
             <section id="modal-<%= medium.id %>" tabindex="-1" aria-hidden="true" class="mother-modal">
                 <div class="relative p-4 w-full max-w-2xl max-h-full">
