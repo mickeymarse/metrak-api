@@ -14,5 +14,5 @@ $ rails s
 
 ## Future plans
 - &#9744; Rebuild UI using different component library (_not likely_)
-or
+  ##### or
 - &#9744; Turn it into an API-only app (_very likely_)
