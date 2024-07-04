@@ -1,5 +1,6 @@
 class ThoughtsController < ApplicationController
   before_action :set_params, only: [:show, :update, :destroy]
+  http_basic_authenticate_with name: Rails.application.credentials.dig(:auth, :user), password: Rails.application.credentials.dig(:auth, :password), except: [:index, :show]
   
   # GET /media/1/thoughts
   def index

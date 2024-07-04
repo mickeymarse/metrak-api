@@ -1,5 +1,6 @@
 class MediaController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: Rails.application.credentials.dig(:auth, :user), password: Rails.application.credentials.dig(:auth, :password), except: [:index, :show]
 
   # GET /media
   def index
