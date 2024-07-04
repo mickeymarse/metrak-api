@@ -1,6 +1,11 @@
 class MediaController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update, :destroy]
-  http_basic_authenticate_with name: Rails.application.credentials.dig(:auth, :user), password: Rails.application.credentials.dig(:auth, :password), except: [:index, :show]
+  http_basic_authenticate_with name: Rails.application.credentials.dig(:auth, :user), password: Rails.application.credentials.dig(:auth, :password), except: [:home, :index, :show]
+
+  def home
+    @meta_title = 'Metrak API'
+    @meta_description = 'API for Metrak built with Ruby on Rails'
+  end
 
   # GET /media
   def index

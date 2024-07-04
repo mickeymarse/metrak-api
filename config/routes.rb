@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "media#index"
-  root to: 'pages#home'
+  root "media#home"
+  #root to: 'pages#home'
   # get "/media", to: "media#index"
   # get "/media/:id", to: "media#show"
   resources :media do
