@@ -63,6 +63,6 @@ class MediaController < ApplicationController
       @medium = Medium.find(params[:id])
     end
     def medium_params
-      params.require(:medium).permit(:title, :format, :appreciation, :image, :year, :altext, :end_year)
+      params.require(:medium).permit(:title, :format, :appreciation, :year, :end_year)
     end
 end
