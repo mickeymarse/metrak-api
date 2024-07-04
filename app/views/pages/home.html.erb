@@ -1,77 +1,7 @@
 
 <section class="flex flex-col">
 
-<nav class="flex">
-<article><h1 class="big-hd">Metrak<p class="sub-hd px-0">Mickey's personal media tracker.</p></h1></article>
-<button type="button"><%= render  "darkModeButton"%></button>
-</nav>
-
-<% if gay_signed_in? %>
-    <%= render  "gayPowers"%>
-<% else %>
-    <button type="button" class="alt-btn text-xl flex place-self-start"><%= link_to 'Sign in', new_gay_session_path %></button>
-<% end %>
-
-<h3 class="text-3xl font-bold dark:text-white">I'm tracking <%= Medium.count %> media and counting!</h3>
-
-
-<article class="gallery">
-    <% @media.each do |medium| %>
-        
-        <div>
-        <img data-modal-target="modal-<%= medium.id %>" data-modal-toggle="modal-<%= medium.id %>" src="<%= medium.image %>" alt="<%= medium.altext %>" class="gallery-img" />
-        </div>
-            
-            <section id="modal-<%= medium.id %>" tabindex="-1" aria-hidden="true" class="mother-modal">
-                <div class="relative p-4 w-full max-w-2xl max-h-full">
-                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <article class="flex justify-center p-4 md:p-5 rounded-t dark:border-gray-600">
-
-                            <span class="medium-badge"><%= medium.title %></span>
-                            <span class="medium-badge"><%= medium.year %><%= medium.end_year ? " - #{medium.end_year}" : "" %></span>
-
-                            <% if medium.format == 'movie' %>
-                                <span class="medium-badge">🎥</span>
-                            <% elsif medium.format == 'show' %>
-                                <span class="medium-badge">📺</span>
-                            <% elsif medium.format == 'comic' %>
-                                <span class="medium-badge">🗨️</span>
-                            <% elsif medium.format == 'book' %>
-                                <span class="medium-badge">📖</span>
-                            <% elsif medium.format == 'game' %>
-                                <span class="medium-badge">🎮</span>
-                            <% elsif medium.format == 'zine' %>
-                                <span class="medium-badge">🖨️</span>
-                            <% elsif medium.format == 'podcast' %>
-                                <span class="medium-badge">📻</span>
-                            <% end %>
-                            
-                            <% if medium.appreciation == 'hatred' %>
-                                <span class="medium-badge">☠️</span>
-                            <% elsif medium.appreciation == 'discomfort' %>
-                                <span class="medium-badge">💩</span>
-                            <% elsif medium.appreciation == 'indifferent' %>
-                                <span class="medium-badge">😐</span>
-                            <% elsif medium.appreciation == 'liked' %>
-                                <span class="medium-badge">😊</span>
-                            <% elsif medium.appreciation == 'tasty' %>
-                                <span class="medium-badge">🆒</span>
-                            <% elsif medium.appreciation == 'loved' %>
-                                <span class="medium-badge">❤️‍🔥</span>
-                            <% end %>
-                        </article>
-
-                        <% if medium.thoughts %>
-                            <article class="flex flex-col p-4 md:p-5 space-y-4">
-                            <% medium.thoughts.each do |bolla| %>
-                            <span class="thought-badge"><%= bolla.body %></span>
-                            <% end %>
-                        <% end %>
-                        </article>
-                    </div>
-                </div>
-            </section> 
-    <% end %>  
-</article>
+<h1>Metrak API</h1>
+<p>Mickey's personal media tracker.</p>
 
 </section>
