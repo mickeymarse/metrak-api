@@ -1,6 +1,6 @@
 # Metrak API
 
-_The API for my_ ~~My~~ personal media tracker. A.k.a. _a Letterboxd clone_. Although, with the possibility of tracking media other than movies.  
+_The API for my_ personal media tracker, a.k.a. _another Letterboxd clone_. Although, with the possibility of tracking media other than movies.  
 It is a project I chose to build in order to learn and practice my **Ruby** and **Ruby on Rails** skills.
 
 It has been deployed using [Fly](https://fly.io)~~, but the deployed version still present _broken_ UI due to problems with the JavaScript code.
