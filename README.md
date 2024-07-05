@@ -1,6 +1,6 @@
 # Metrak API
 
-_The API for m_~~M~~y personal media tracker. A.k.a. _a Letterboxd clone_. Although, with the possibility of tracking media other than movies.  
+_The API for my_ ~~My~~ personal media tracker. A.k.a. _a Letterboxd clone_. Although, with the possibility of tracking media other than movies.  
 It is a project I chose to build in order to learn and practice my **Ruby** and **Ruby on Rails** skills.
 
 It has been deployed using [Fly](https://fly.io)~~, but the deployed version still present _broken_ UI due to problems with the JavaScript code.
@@ -18,19 +18,19 @@ Anyway, I will discuss the whole process better, as well as what went wrong, on 
 
 There is a `media` table and a `thoughts` table. A media can be linked to many thoughts. The idea is that I don't want to share full-on reviews. Rather, bubble thoughts that came/come/will come up to my mind before/after/while enjoying the media selected.
 
-### `GET /media/` [try](http://metrak.fly.dev/media)
+### `GET /media/` [[try]](http://metrak.fly.dev/media)
 
 Returns all the media in the db.
 
-### `GET /media/[id]` [try](http://metrak.fly.dev/media/1)
+### `GET /media/[id]` [[try]](http://metrak.fly.dev/media/1)
 
 Returns a specific media.
 
-### `GET /media/[id]/thoughts/` [try](http://metrak.fly.dev/media/1/thoughts)
+### `GET /media/[id]/thoughts/` [[try]](http://metrak.fly.dev/media/1/thoughts)
 
 Returns all the thoughts for the selected media.
 
-### `GET /media/[id]/thoughts/[id]` [try](http://metrak.fly.dev/media/1/thoughts/1)
+### `GET /media/[id]/thoughts/[id]` [[try]](http://metrak.fly.dev/media/1/thoughts/1)
 
 Returns selected thought for selected media.
 
