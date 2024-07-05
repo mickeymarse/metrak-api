@@ -10,34 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_29_114732) do
-  create_table "gays", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_gays_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_gays_on_reset_password_token", unique: true
-  end
+ActiveRecord::Schema[7.1].define(version: 2024_07_04_153814) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "media", force: :cascade do |t|
     t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "appreciation"
-    t.string "image"
     t.string "format"
-    t.text "altext"
+    t.string "appreciation"
     t.integer "year"
     t.integer "end_year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "thoughts", force: :cascade do |t|
     t.text "body"
-    t.integer "medium_id", null: false
+    t.bigint "medium_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["medium_id"], name: "index_thoughts_on_medium_id"

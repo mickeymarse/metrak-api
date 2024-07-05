@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Metrak
   class Application < Rails::Application
+    # Turn application into api-only
+    config.api_only = true
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 
@@ -23,5 +26,6 @@ module Metrak
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
   end
 end
